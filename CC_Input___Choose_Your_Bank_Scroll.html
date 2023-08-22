@@ -1,12 +1,4 @@
-const showPopup = async () => {
-    const popup = document.createElement("div");
-	popup.setAttribute("id", "NETBANKING");
-    popup.classList.add("popup");
-    const popupMain = document.createElement("div");
-	popup.setAttribute("id", "NETBANKING");
-    popupMain.classList.add("popup-main");
-
-    const content = `<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8"/>
@@ -31,10 +23,5 @@ const showPopup = async () => {
 		</div>
 	</div>
 </div>
-</body></html>`;
-    popupMain.innerHTML = content;
-
-    popup.appendChild(popupMain);
-
-    document.getElementsByTagName("body")[0].appendChild(popup);
-};
+</body>
+</html>
