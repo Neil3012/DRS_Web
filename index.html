@@ -8,14 +8,22 @@
     <script type='text/javascript' src='build/ar.js'></script>
 
 </head>
-    <body>
-    <a-scene
-        vr-mode-ui="enabled: false"
-        arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
-        renderer='antialias: true; alpha: true'>
-            <a-camera gps-camera rotation-reader></a-camera>
-            <a-box gps-entity-place='latitude:19.1043972; longitude: 72.8815919' color='red' scale='1 1 1'></a-box>
+<body>
+
+    <a-scene vr-mode-ui="enabled: false"
+             arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
+             renderer='antialias: true; alpha: true'>
+        <a-camera gps-camera rotation-reader></a-camera>
+        <a-box position='0 0 -1' color='red' scale='1 1 1'></a-box> <!-- Adjust the position here -->
     </a-scene>
-    </body>
+    <!--    This code is for geoPosition
+    <a-scene
+          vr-mode-ui="enabled: false"
+          arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
+          renderer='antialias: true; alpha: true'>
+              <a-camera gps-camera rotation-reader></a-camera>
+              <a-box gps-entity-place='latitude:19.1043972; longitude: 72.8815919' color='red' scale='1 1 1'></a-box>
+      </a-scene>-->
+</body>
 </html>
 
