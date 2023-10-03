@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
     <title>AR.js Hello World Example</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -11,10 +11,10 @@
 <body>
 
     <a-scene vr-mode-ui="enabled: false"
-             arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
-             renderer='antialias: true; alpha: true'>
+             arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false; detectionMode: mono_and_matrix;' <!-- Adjust detectionMode as needed -->
+        renderer='antialias: true; alpha: true'>
         <a-camera gps-camera rotation-reader></a-camera>
-        <a-box position='0 0 -1' color='red' scale='1 1 1'></a-box> <!-- Adjust the position here -->
+        <a-box position='0 0 -1' color='red' scale='1 1 1'></a-box>
     </a-scene>
     <!--    This code is for geoPosition
     <a-scene
