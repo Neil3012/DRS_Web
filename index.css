@@ -15,3 +15,13 @@
 #ar-info {
   font-size: 20px;
 }
+.ar-tag {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  pointer-events: none; /* To ensure the tag does not interfere with interactions with AR objects */
+  user-select: none; /* Prevent text selection */
+}
