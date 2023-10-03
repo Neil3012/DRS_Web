@@ -6,15 +6,19 @@
     <script type='text/javascript' src='build/aframe-ar-nft.js'></script>
     <script type='text/javascript' src='build/aframe.js'></script>
     <script type='text/javascript' src='build/ar.js'></script>
-
+    <script type='text/css' src='index.css'></script>
+    <script type='text/javascript' src='indes.js'></script>
 </head>
 <body>
-
+    <div id="ar-ui">
+        <button id="ar-button">Interact</button>
+        <p id="ar-info">Additional Information</p>
+    </div>
     <a-scene vr-mode-ui="enabled: false"
              arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false; detectionMode: mono_and_matrix;' <!-- Adjust detectionMode as needed -->
         renderer='antialias: true; alpha: true'>
         <a-camera gps-camera rotation-reader></a-camera>
-        <a-box position='0 0 -1' color='red' scale='1 1 1'></a-box>
+        <a-box id="boxId" position='0 0 -1' color='red' scale='1 1 1'></a-box>
     </a-scene>
     <!--    This code is for geoPosition
     <a-scene
