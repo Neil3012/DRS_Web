@@ -15,7 +15,10 @@
     <a-scene vr-mode-ui="enabled: false"
     arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false; detectionMode: mono_and_matrix;' renderer='antialias: true; alpha: true'>
         <a-camera gps-camera rotation-reader></a-camera>
-        <a-box id="boxId" position='-1 0 -2' color='red' scale='1 1 1'></a-box>
+        <a-box id="boxId" position='0 0 0' color='red' scale='1 1 1'></a-box>
+        <a-box id="boxId" position='1 0 0 color='green' scale='1 1 1'></a-box>
+        <a-box id="boxId" position='0 1 0' color='blue' scale='1 1 1'></a-box>
+        <a-box id="boxId" position='0 0 1' color='yellow' scale='1 1 1'></a-box>
         <div id="ar-tag" class="ar-tag">Object Name</div>
         <div id="ar-ui">
           <button id="ar-button">Interact</button>
