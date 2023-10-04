@@ -12,7 +12,7 @@ AFRAME.registerComponent('track-camera', {
 
         // Calculate the distance between the camera and the point of interest (e.g., (0, 0, -1))
         const distanceToInterest = cameraPosition.distanceTo(new THREE.Vector3(0, 0, -1));
-
+        distanceText.setAttribute('text', { value: 'Distance: ${distanceToInterest.toFixed(2)} m' });
         // Check if the camera is closer than the trigger distance
         if (distanceToInterest < triggerDistance) {
             triggeredCube.setAttribute('visible', 'true'); // Show the cube
