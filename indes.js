@@ -1,24 +1,26 @@
-// Get a reference to the AR object and tag element
-const arObject = document.querySelector('#boxId');
-const arTag = document.querySelector('#ar-tag');
+const triggeredCube = document.getElementById('triggeredCube');
 
-// Function to update the tag position
-function updateTagPosition() {
-    const arObjectPosition = arObject.object3D.position;
-    const arObjectWorldPos = new THREE.Vector3();
-    arObject.object3D.getWorldPosition(arObjectWorldPos);
+// Set a threshold distance for triggering the cube
+const triggerDistance = 0.5; // Adjust this value as needed
 
-    // Convert world coordinates to screen coordinates
-    const screenPosition = arjs.camera.project(arObjectWorldPos);
+// Add an event listener to track the camera position
+AFRAME.registerComponent('track-camera', {
+    tick: function () {
+        // Get the current camera position
+        const camera = this.el.sceneEl.camera;
+        const cameraPosition = camera.el.object3D.position;
 
-    // Set the position of the tag element
-    arTag.style.top = `${screenPosition.y}px`;
-    arTag.style.left = `${screenPosition.x}px`;
-}
+        // Calculate the distance between the camera and the point of interest (e.g., (0, 0, -1))
+        const distanceToInterest = cameraPosition.distanceTo(new THREE.Vector3(0, 0, -1));
 
-// Call the function when the AR object is spawned or moves
-arObject.addEventListener('object3dset', updateTagPosition);
-arObject.addEventListener('positionchanged', updateTagPosition);
+        // Check if the camera is closer than the trigger distance
+        if (distanceToInterest < triggerDistance) {
+            triggeredCube.setAttribute('visible', 'true'); // Show the cube
+        } else {
+            triggeredCube.setAttribute('visible', 'false'); // Hide the cube
+        }
+    }
+});
 
-// Initial positioning
-updateTagPosition();
+// Attach the track-camera component to the AR scene
+document.querySelector('a-scene').setAttribute('track-camera', '');
