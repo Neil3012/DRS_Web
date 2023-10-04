@@ -3,7 +3,7 @@ const distanceText = document.getElementById('distanceText'); // Get the distanc
 
 // Set a threshold distance for triggering the cube
 const triggerDistance = 0.5; // Adjust this value as needed
-
+triggeredCube.setAttribute()
 // Add an event listener to track the camera position
 AFRAME.registerComponent('track-camera', {
     tick: function () {
