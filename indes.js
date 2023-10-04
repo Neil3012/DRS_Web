@@ -23,4 +23,4 @@ AFRAME.registerComponent('track-camera', {
 });
 
 // Attach the track-camera component to the AR scene
-document.querySelector('a-scene').setAttribute('track-camera', '');
+// document.querySelector('a-scene').setAttribute('track-camera', '');
