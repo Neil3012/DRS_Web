@@ -1,4 +1,5 @@
 const triggeredCube = document.getElementById('triggeredCube');
+const distanceText = document.getElementById('distanceText'); // Get the distance text element
 
 // Set a threshold distance for triggering the cube
 const triggerDistance = 0.5; // Adjust this value as needed
@@ -12,7 +13,10 @@ AFRAME.registerComponent('track-camera', {
 
         // Calculate the distance between the camera and the point of interest (e.g., (0, 0, -1))
         const distanceToInterest = cameraPosition.distanceTo(new THREE.Vector3(0, 0, -1));
-        // distanceText.setAttribute('text', { value: 'Distance: ${distanceToInterest.toFixed(2)} m' });
+
+        // Update the distance text with the calculated distance
+        distanceText.setAttribute('text', { value: `Distance: ${distanceToInterest.toFixed(2)} m` });
+
         // Check if the camera is closer than the trigger distance
         if (distanceToInterest < triggerDistance) {
             triggeredCube.setAttribute('visible', 'true'); // Show the cube
@@ -23,4 +27,4 @@ AFRAME.registerComponent('track-camera', {
 });
 
 // Attach the track-camera component to the AR scene
- document.querySelector('a-scene').setAttribute('track-camera', '');
+document.querySelector('a-scene').setAttribute('track-camera', '');
