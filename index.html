@@ -13,9 +13,20 @@
     <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
     <a-entity  
     gltf-model="magnemite/scene.gltf"
+    gps-new-entity-place="latitude:19.1043915; longitude: 72.8816301" scale="0.5 0.5 0.5"></a-entity>
+
+    <a-assets>
+        <!-- Load your GLTF model and assign it an ID -->
+        <a-asset-item id="yourModelID" src="magnemite/scene.gltf"></a-asset-item>
+      </a-assets>
+      
+      <a-entity  
+    gltf-model="yourModelID"
     position="0 0 -1"
     scale="1 1 1"></a-entity>
+
     <a-sphere id="triggered" position="0 0.5 -1" scale="0.2 0.2 0.2" material="color: red; visible: true;"></a-sphere>
+
 </a-scene>
 </body>
 </html>
